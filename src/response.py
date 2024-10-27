@@ -1,16 +1,18 @@
 from sentence_transformers import SentenceTransformer
 from langchain_groq import ChatGroq
 from langchain.chains import RetrievalQA
-from langchain.vectorstores import FAISS
+from langchain_community.vectorstores import FAISS
 from langchain.schema import Document
 from langchain.embeddings import HuggingFaceEmbeddings
 import pickle
 from dotenv import load_dotenv
-
+import os
 # Load environment variables
-GROQ = load_dotenv('GROQ-API-KEY')
+load_dotenv()
+GROQ = os.getenv('GROQ_API_KEY')
 def response(query, file_path):
     model = SentenceTransformer('all-MiniLM-L6-v2')
+    print(GROQ)
 
     # Step 6: Initialize the ChatGroq LLM
     llm = ChatGroq(

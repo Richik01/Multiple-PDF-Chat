@@ -23,17 +23,17 @@ process_pdf_clicked = st.sidebar.button("Process PDFs")
 file_path = "vector_db.pkl"
 
 if process_pdf_clicked and pdf_files:
-    # Step 1: Extract text from the uploaded PDFs
+    # Extract text from the uploaded PDFs
     main_placeholder.text("Extracting text from PDFs...Started...✅✅✅")
     txt = textExtraction(pdf_files)
     st.write(txt)
-    # Step 2: Split the text into smaller chunks
+    # Split the text into smaller chunks
     main_placeholder.text("Text Splitting...Started...✅✅✅")
     chunks = chunks(txt)
 
-    # Step 3: Initialize the SentenceTransformer model
+    # Initialize the SentenceTransformer model
     embeddings = embeddings(chunks)
-    # Step 4: Create FAISS index
+    # Create FAISS index
     faiss_vs(embeddings=embeddings,chunks=chunks,file_path=file_path)
     main_placeholder.text("FAISS index created and saved...✅✅✅")
     time.sleep(1)

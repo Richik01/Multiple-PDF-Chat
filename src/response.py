@@ -12,7 +12,6 @@ load_dotenv()
 GROQ = os.getenv('GROQ_API_KEY')
 def response(query, file_path):
     model = SentenceTransformer('all-MiniLM-L6-v2')
-    # print(GROQ)
 
     # Step 6: Initialize the ChatGroq LLM
     llm = ChatGroq(

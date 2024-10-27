@@ -1,6 +1,7 @@
 import streamlit as st
 import nltk
 import os
+import time
 
 from text_extraction import textExtraction
 from chunks import chunks
@@ -35,6 +36,7 @@ if process_pdf_clicked and pdf_files:
     # Step 4: Create FAISS index
     faiss_vs(embeddings=embeddings,chunks=chunks,file_path=file_path)
     main_placeholder.text("FAISS index created and saved...✅✅✅")
+    time.sleep(1)
 
 # Querying the processed data
 query = main_placeholder.text_input("Ask a question about the PDF content:")

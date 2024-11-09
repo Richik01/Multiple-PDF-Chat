@@ -1,6 +1,6 @@
 # MULTIPLE-PDF-CHAT
  
-LINK : https://multiple-pdf-chat-htaoqqkuyuckhs9zlpqxma.streamlit.app/
+LINK : [https://multiple-pdf-chat-htaoqqkuyuckhs9zlpqxma.streamlit.app/](https://multiple-pdf-chat-htaoqqkuyuckhs9zlpqxma.streamlit.app/)
 <ul>
 <li>Uses RAG.</li>
  <li>Built with LLama3, langchain and FAISS</li>
